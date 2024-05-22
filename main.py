@@ -14,7 +14,8 @@ dt_c = datetime.fromtimestamp(c_time)
 
 #Kopieren von MPS File zu Laufwerk
 bestellungen = pd.read_excel(link)
-bestellungen[['PE14_MassProdRel', 'QTY','FIXPOSNR','BELEGART']] = bestellungen[['PE14_MassProdRel', 'QTY','FIXPOSNR','BELEGART']].fillna(0).astype('int64')
+
+bestellungen[['BELEGNR','PE14_MassProdRel', 'QTY','FIXPOSNR','BELEGART']] = bestellungen[['BELEGNR','PE14_MassProdRel', 'QTY','FIXPOSNR','BELEGART']].fillna(0).astype('int64')
 bestellungen.to_csv(r'L:\Q\MPS.csv', sep=';', index=False)
 
 #Log File
