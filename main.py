@@ -19,12 +19,12 @@ bestellungen[['BELEGNR','PE14_MassProdRel', 'QTY','FIXPOSNR','BELEGART']] = best
 bestellungen.to_csv(r'L:\Q\MPS.csv', sep=';', index=False)
 
 #Log File
-with open(r'S:\EMEA\Kontrollabfragen\MPS.txt', 'w') as f:
-    f.write(f'Last MPS copied at: {dt_c}')
+with open(r'S:\EMEA\Kontrollabfragen\MPS.txt', 'a') as f:
+    f.write(f'\nLast MPS copied at: {dt_c}')
     f.close()
 
 
-messagebox.showinfo('Update Erfolgreich!', f'Das MPS Update mit letzter Änderung vom {dt_c} wurde erfolgreich durchgeführt.')
+#messagebox.showinfo('Update Erfolgreich!', f'Das MPS Update mit letzter Änderung vom {dt_c} wurde erfolgreich durchgeführt.')
 
 
 
