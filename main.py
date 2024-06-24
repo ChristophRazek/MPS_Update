@@ -5,8 +5,8 @@ from datetime import datetime
 import os
 
 warnings.filterwarnings('ignore')
-
-link = r'C:\Users\ChristophRazek\Emea\06_Qualitymanagement - Dokumente\01_QS\04_MPS\MPS.xlsx'
+user = os.getlogin()
+link = rf'C:\Users\{user}\Emea\06_Qualitymanagement - Dokumente\01_QS\04_MPS\MPS.xlsx'
 
 #Zeitstempel Letzte Änderung!
 c_time = os.path.getmtime(link)
@@ -19,7 +19,7 @@ bestellungen[['BELEGNR','PE14_MassProdRel', 'QTY','FIXPOSNR','BELEGART']] = best
 bestellungen.to_csv(r'L:\Q\MPS.csv', sep=';', index=False)
 
 #Log File
-with open(r'S:\EMEA\Kontrollabfragen\MPS.txt', 'a') as f:
+with open(rf'C:\Users\{user}\Emea\05_SupplyChainMgt - Dokumente\27_Datenuebertragung\EMEA\Kontrollabfragen\MPS.txt', 'a') as f:
     f.write(f'\nLast MPS copied at: {dt_c}')
     f.close()
 
